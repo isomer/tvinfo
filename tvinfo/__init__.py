@@ -102,23 +102,23 @@ def get_backends():
 
 patterns=[
 	# seasonseasonEepisodeepisode
-        r'(?:e7-)?(.*?)[^A-Za-z0-9] *-? *[Ss]? *([0-9][0-9])[Eex]([0-9]+).*\.([^.]+)$',
+        r'(?:e7-)?(.*?)[^A-Za-z0-9)] *-? *[Ss]? *([0-9][0-9])[Eex]([0-9]+).*\.([^.]+)$',
 	# seasonEepisodeepisode
-	r'(.*?)[^A-Za-z0-9] *-? *[Ss]? *([0-9])[Eex]([0-9]+).*\.([^.]+)$',
+	r'(.*?)[^A-Za-z0-9)] *-? *[Ss]? *([0-9])[Eex]([0-9]+).*\.([^.]+)$',
 	# seasonseasonepisodeepisode
-	r'(.*?)[^A-Za-z0-9] *-? *[Ss]? *([0-9][0-9])([0-9][0-9]).*\.([^.]+)$',
+	r'(.*?)[^A-Za-z0-9)] *-? *[Ss]? *([0-9][0-9])([0-9][0-9]).*\.([^.]+)$',
 	# seasonepisodeepisode
-	r'(.*?)[^A-Za-z0-9] *-? *[Ss]? *([0-9])([0-9][0-9]).*\.([^.]+)$',
+	r'(.*?)[^A-Za-z0-9)] *-? *[Ss]? *([0-9])([0-9][0-9]).*\.([^.]+)$',
 	# seasonseason.episodeepisode
-	r'(.*?)[^A-Za-z0-9] *-? *[Ss]? *([0-9][0-9])\.([0-9][0-9]).*\.([^.]+)$',
+	r'(.*?)[^A-Za-z0-9)] *-? *[Ss]? *([0-9][0-9])\.([0-9][0-9]).*\.([^.]+)$',
 	# season.episodeepisode
-	r'(.*?)[^A-Za-z0-9] *-? *[Ss]? *([0-9])\.([0-9][0-9]).*\.([^.]+)$',
+	r'(.*?)[^A-Za-z0-9)] *-? *[Ss]? *([0-9])\.([0-9][0-9]).*\.([^.]+)$',
 	# Sseasonseason episodeepisode
-	r'(.*?)[^A-Za-z0-9] *-? *[Ss]([0-9]+) ?[Ee]([0-9]+).*\.([^.]+)$',
+	r'(.*?)[^A-Za-z0-9)] *-? *[Ss]([0-9]+) ?[Ee]([0-9]+).*\.([^.]+)$',
 	# Sseasonseason.Eepisodeepisode
-	r'(.*?)[^A-Za-z0-9] *-? *[Ss]([0-9]+).[Ee]([0-9]+).*\.([^.]+)$',
+	r'(.*?)[^A-Za-z0-9)] *-? *[Ss]([0-9]+).[Ee]([0-9]+).*\.([^.]+)$',
 	# Sseasonseason-episodeepisode
-	r'(.*?)[^A-Za-z0-9] *-? *[Ss]([0-9]+)-([0-9]+).*\.([^.]+)$',
+	r'(.*?)[^A-Za-z0-9)] *-? *[Ss]([0-9]+)-([0-9]+).*\.([^.]+)$',
 ]
 
 def parse_filename(fname):
@@ -157,7 +157,7 @@ def parse_filename(fname):
 			if debug:
 				print "DEBUG: final name:",`name`
 			return (
-				re.sub(r"[^A-Za-z0-9]"," ",name).strip(),
+				re.sub(r"[^A-Za-z0-9()]"," ",name).strip(),
 				int(season),
 				int(episode),
 				ext)
